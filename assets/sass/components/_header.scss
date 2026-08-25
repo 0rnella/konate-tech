@@ -2,7 +2,40 @@
 @use "../mixins" as *;
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
   background: var(--gradient-header);
+}
+
+// On the homepage, the header floats over the hero instead of pushing it
+// down: transparent and top-aligned so the hero's own gradient shows
+// through underneath, then it picks up a solid backdrop once the page
+// scrolls past the hero (toggled via .scrolled, see assets/js/main.js).
+.has-hero header {
+  position: fixed;
+  inset-inline: 0;
+  background: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--gradient-header);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  &.scrolled::before {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::before {
+      transition: none;
+    }
+  }
 }
 
 .header-inner {
@@ -15,7 +48,7 @@ header {
 }
 
 .brand {
-  color: var(--color-text-inverse);
+  color: var(--color-accent-strong);
   font-family: $font-sans;
   font-size: 1.25rem;
   font-weight: $font-weight-bold;
@@ -36,19 +69,24 @@ header nav {
   }
 
   a {
-    color: var(--color-text-inverse);
+    color: var(--color-text);
     text-decoration: none;
     font-weight: $font-weight-medium;
-    opacity: 0.85;
+    opacity: 0.7;
 
     &:hover,
     &.active,
     &.ancestor {
       opacity: 1;
+      color: var(--color-accent-strong);
     }
   }
 }
 
-.cta {
-  @include button-solid;
+// On small screens the header's own CTA just duplicates the one in the
+// hero right below it (and forces the nav to wrap) — drop it there.
+@media (max-width: 640px) {
+  .header-inner .cta {
+    display: none;
+  }
 }

@@ -3,11 +3,14 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body>
+<body{{ if .IsHome }} class="has-hero"{{ end }}>
   <header>
     {{ partial "header.html" . }}
   </header>
-  <main>
+  {{ if .IsHome }}
+    {{ partial "hero.html" . }}
+  {{ end }}
+  <main class="content">
     {{ block "main" . }}{{ end }}
   </main>
   <footer>

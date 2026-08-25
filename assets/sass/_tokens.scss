@@ -4,21 +4,24 @@
 @use "sass:color";
 
 // --- Brand colors -----------------------------------------------------
-$color-primary: #4b5cf0;
-$color-primary-mid: #26308f;
-$color-primary-dark: #12163c;
-$color-primary-hover: color.adjust($color-primary, $lightness: -8%);
+// Warm, editorial palette: cream walls, dusty terracotta marble, brass fixtures.
+$color-page-bg: #fdf8f1;
+$color-surface: #f7ece0;
+$color-accent-soft: #dba879;
+$color-accent: #b5654a;
+$color-accent-strong: color.adjust($color-accent, $lightness: -12%);
+$color-brass: #a9803f;
 
-$color-text: #1a1a1a;
-$color-text-inverse: #ffffff;
-$color-link: #0000ee;
-$color-border: #222222;
+$color-text: #33261c;
+$color-text-inverse: #fbf3ea;
+$color-link: $color-accent-strong;
+$color-border: #ddc7ac;
 
 $gradient-header: linear-gradient(
   115deg,
-  #3846c8 0%,
-  $color-primary-mid 45%,
-  $color-primary-dark 100%
+  $color-surface 0%,
+  #ecd2b6 50%,
+  $color-accent-soft 100%
 );
 
 // --- Typography ---------------------------------------------------------
@@ -38,3 +41,4 @@ $container-content: 768px;
 
 // --- Misc -------------------------------------------------------------
 $radius-md: 8px;
+$z-sticky: 50;

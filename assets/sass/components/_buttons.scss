@@ -1,0 +1,6 @@
+@use "../mixins" as *;
+
+// Shared primary call-to-action. Reused by the header nav and the hero.
+.cta {
+  @include button-solid;
+}

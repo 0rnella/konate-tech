@@ -1,0 +1,21 @@
+{{- /*
+Renders the homepage hero: headline, subtitle, and CTA, sourced from the
+page's front matter (heroTitle / heroSubtitle) so it stays editable
+without touching templates.
+
+@context {page} . The current page.
+*/}}
+{{- $title := .Params.heroTitle }}
+{{- with $title }}
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>{{ . }}</h1>
+      {{- with $.Params.heroSubtitle }}
+        <p class="hero-subtitle">{{ . }}</p>
+      {{- end }}
+      {{- with site.Params.email }}
+        <a class="cta" href="mailto:{{ . }}">Get in touch</a>
+      {{- end }}
+    </div>
+  </section>
+{{- end }}

@@ -1,15 +1,19 @@
 @use "tokens" as *;
 @use "mixins" as *;
 @use "components/header";
+@use "components/hero";
+@use "components/buttons";
 @use "components/footer";
 
 // Expose brand tokens as CSS custom properties so any rule — including
 // future components and inline styles — can reuse them at runtime.
 :root {
-  --color-primary: #{$color-primary};
-  --color-primary-hover: #{$color-primary-hover};
-  --color-primary-mid: #{$color-primary-mid};
-  --color-primary-dark: #{$color-primary-dark};
+  --color-page-bg: #{$color-page-bg};
+  --color-surface: #{$color-surface};
+  --color-accent: #{$color-accent};
+  --color-accent-strong: #{$color-accent-strong};
+  --color-accent-soft: #{$color-accent-soft};
+  --color-brass: #{$color-brass};
   --color-text: #{$color-text};
   --color-text-inverse: #{$color-text-inverse};
   --color-link: #{$color-link};
@@ -24,13 +28,14 @@
 }
 
 body {
+  background: var(--color-page-bg);
   color: var(--color-text);
   font-family: $font-sans;
   line-height: 1.5;
   margin: 0;
 }
 
-main {
+.content {
   @include container($container-content);
   padding-block: $space-3;
 }
