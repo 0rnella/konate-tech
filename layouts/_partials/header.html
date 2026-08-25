@@ -1,2 +1,9 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+{{- $brand := site.Params.brand | default site.Title }}
+{{- $email := site.Params.email }}
+<div class="header-inner">
+  <a class="brand" href="{{ site.Home.RelPermalink }}">{{ $brand }}</a>
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+  {{- with $email }}
+    <a class="cta" href="mailto:{{ . }}">Contact us</a>
+  {{- end }}
+</div>

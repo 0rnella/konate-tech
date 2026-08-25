@@ -1,0 +1,6 @@
+@use "../tokens" as *;
+
+footer {
+  border-top: 1px solid var(--color-border);
+  padding: $space-2;
+}

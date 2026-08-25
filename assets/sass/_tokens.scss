@@ -1,0 +1,40 @@
+// Design tokens — the single source of truth for brand colors, spacing,
+// typography and other reusable values. Change a value here and it
+// propagates everywhere it's used.
+@use "sass:color";
+
+// --- Brand colors -----------------------------------------------------
+$color-primary: #4b5cf0;
+$color-primary-mid: #26308f;
+$color-primary-dark: #12163c;
+$color-primary-hover: color.adjust($color-primary, $lightness: -8%);
+
+$color-text: #1a1a1a;
+$color-text-inverse: #ffffff;
+$color-link: #0000ee;
+$color-border: #222222;
+
+$gradient-header: linear-gradient(
+  115deg,
+  #3846c8 0%,
+  $color-primary-mid 45%,
+  $color-primary-dark 100%
+);
+
+// --- Typography ---------------------------------------------------------
+$font-sans: sans-serif;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// --- Spacing scale --------------------------------------------------------
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2rem;
+
+// --- Layout ---------------------------------------------------------------
+$container-wide: 1200px;
+$container-content: 768px;
+
+// --- Misc -------------------------------------------------------------
+$radius-md: 8px;

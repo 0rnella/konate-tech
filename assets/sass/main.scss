@@ -1,0 +1,41 @@
+@use "tokens" as *;
+@use "mixins" as *;
+@use "components/header";
+@use "components/footer";
+
+// Expose brand tokens as CSS custom properties so any rule — including
+// future components and inline styles — can reuse them at runtime.
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-primary-mid: #{$color-primary-mid};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-text: #{$color-text};
+  --color-text-inverse: #{$color-text-inverse};
+  --color-link: #{$color-link};
+  --color-border: #{$color-border};
+  --gradient-header: #{$gradient-header};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-text);
+  font-family: $font-sans;
+  line-height: 1.5;
+  margin: 0;
+}
+
+main {
+  @include container($container-content);
+  padding-block: $space-3;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}

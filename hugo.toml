@@ -2,6 +2,9 @@ baseURL = 'https://konate.tech/'
 locale = 'en-us'
 title = 'Konaté Tech B.V.'
 
+[params]
+  brand = 'Konaté Tech'
+  email = 'ornella@konate.tech'
 
 [menus]
   [[menus.main]]
