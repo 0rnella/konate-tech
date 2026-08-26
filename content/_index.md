@@ -1,6 +1,5 @@
 +++
 date = '2026-08-25T16:05:54+02:00'
-draft = true
 title = 'Home'
 heroTitle = 'From vague problem to completed project.'
 heroSubtitle = "Helping growing companies find root causes, design solutions, and staying with your team until the hardest part is solved."
