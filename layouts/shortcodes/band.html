@@ -1,15 +1,18 @@
 {{- /*
-Wraps its content in a full-bleed, color-inverted section — the
-light/dark rhythm down the homepage. Usage:
+Wraps its content in a full-bleed, color-inverted <section> — the
+light/dark rhythm down the homepage. `title` becomes this section's
+own heading and its accessible name (aria-labelledby), so it reads as
+a real landmark rather than an anonymous <section>. Usage:
 
-{{< band >}}
-## How I can help
-
+{{< band title="How I can help" >}}
 {{< services >}}
 {{< /band >}}
 */}}
-<div class="band">
+{{- $title := .Get "title" }}
+{{- $id := $title | anchorize }}
+<section class="band"{{ with $title }} aria-labelledby="{{ $id }}"{{ end }}>
   <div class="band-inner">
+    {{- with $title }}<h2 id="{{ $id }}">{{ . }}</h2>{{ end }}
     {{- .Inner | $.Page.RenderString (dict "display" "block") }}
   </div>
-</div>
+</section>

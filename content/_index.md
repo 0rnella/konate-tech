@@ -37,22 +37,19 @@ value = '2M+'
 label = 'users on a platform I shipped at Disney'
 +++
 
-## Track record
-
+{{< section title="Track record" >}}
 {{< stats >}}
+{{< /section >}}
 
-{{< band >}}
-## How I can help
-
+{{< band title="How I can help" >}}
 {{< services >}}
 {{< /band >}}
 
-## Selected work
-
+{{< section title="Selected work" >}}
 {{< case-studies >}}
+{{< /section >}}
 
-## What clients say
-
+{{< section title="What clients say" >}}
 {{< quotes >}}
 > "The best feature Bobsled ever built."
 >
@@ -63,9 +60,9 @@ label = 'users on a platform I shipped at Disney'
 >
 > Elisée Ouédraogo, Engineering Lead, DoonyaLabs.
 {{< /quotes >}}
+{{< /section >}}
 
-## About
-
+{{< section title="About" >}}
 {{< about-photo >}}
 Konaté Tech helps growing companies turn vague, hairy problems into architecture their team
 can build.
@@ -81,10 +78,9 @@ I work as a hands-on technical partner: identifying the root cause of a problem,
 solution, writing and reviewing both architecture and code, and sitting with the team until the
 hardest part is solved.
 {{< /about-photo >}}
+{{< /section >}}
 
-{{< band >}}
-## Let's talk
-
+{{< band title="Let's talk" >}}
 If you're not sure where to even start, that's the kind of problem I like best.
 {.lede}
 

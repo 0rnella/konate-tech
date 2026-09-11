@@ -1,11 +1,10 @@
 @use "../tokens" as *;
 
-// Headings inside markdown-driven body copy (About, How I can help,
-// Selected work, etc.) — each `##` becomes a new section, so give them
-// room to breathe and a consistent rhythm down the page. Colors are
-// deliberately left to inherit from the surrounding context (`body`
-// normally, `.band` when a section is inverted) rather than hardcoded,
-// so the same heading works on either background.
+// Headings for each homepage <section> (About, How I can help, Selected
+// work, etc.), rendered by the {{< section >}}/{{< band >}} shortcodes.
+// Colors are deliberately left to inherit from the surrounding context
+// (`body` normally, `.band` when a section is inverted) rather than
+// hardcoded, so the same heading works on either background.
 .content h2 {
   font-size: 1rem;
   font-weight: 700;
@@ -14,10 +13,11 @@
   margin: 0 0 $space-3;
 }
 
-// Vertical rhythm between top-level sections — each new section's
-// heading gets room from the one before it; a band gets its own via
-// .band-inner's padding instead.
-.content > h2 {
+// Vertical rhythm between top-level sections (each is a real <section>,
+// from the {{< section >}}/{{< band >}} shortcodes) — gives each one
+// room from the one before it. The very first doesn't need it: .content
+// already has its own top padding.
+.content > section + section {
   margin-top: $space-4 * 2;
 }
 

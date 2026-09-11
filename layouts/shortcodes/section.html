@@ -1,0 +1,16 @@
+{{- /*
+Wraps a topical block of the homepage in a semantic <section>. `title`
+becomes this section's own heading and its accessible name
+(aria-labelledby), so it reads as a real landmark rather than an
+anonymous <section> — same convention as {{< band >}}. Usage:
+
+{{< section title="Track record" >}}
+{{< stats >}}
+{{< /section >}}
+*/}}
+{{- $title := .Get "title" }}
+{{- $id := $title | anchorize }}
+<section{{ with $title }} aria-labelledby="{{ $id }}"{{ end }}>
+  {{- with $title }}<h2 id="{{ $id }}">{{ . }}</h2>{{ end }}
+  {{- .Inner | $.Page.RenderString (dict "display" "block") }}
+</section>
