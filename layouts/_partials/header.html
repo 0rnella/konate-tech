@@ -4,6 +4,6 @@
   <a class="brand" href="{{ site.Home.RelPermalink }}">{{ $brand }}</a>
   {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
   {{- with $email }}
-    <a class="cta" href="mailto:{{ . }}">Contact</a>
+    <a class="cta" href="mailto:{{ . }}">{{ . }}</a>
   {{- end }}
 </div>

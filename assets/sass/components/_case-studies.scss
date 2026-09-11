@@ -1,10 +1,17 @@
 @use "../tokens" as *;
 @use "../mixins" as *;
 
-// --- Card grid (homepage teaser + case-studies index) --------------------
+// --- Card grid (homepage teaser) ------------------------------------------
 .case-study-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: $space-3;
+}
+
+// --- Card stack (the /case-studies index — full-width, one under another) -
+.case-study-list {
+  display: flex;
+  flex-direction: column;
   gap: $space-3;
 }
 

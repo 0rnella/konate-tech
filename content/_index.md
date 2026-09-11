@@ -49,19 +49,6 @@ label = 'users on a platform I shipped at Disney'
 {{< case-studies >}}
 {{< /section >}}
 
-{{< section title="What clients say" >}}
-{{< quotes >}}
-> "The best feature Bobsled ever built."
->
-> Flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
-> designed, and shipped in a single sprint.
-
-> "Ornella taught me how to run actionable meetings."
->
-> Elisée Ouédraogo, Engineering Lead, DoonyaLabs.
-{{< /quotes >}}
-{{< /section >}}
-
 {{< section title="About" >}}
 {{< about-photo >}}
 Konaté Tech helps growing companies turn vague, hairy problems into architecture their team
@@ -80,11 +67,24 @@ hardest part is solved.
 {{< /about-photo >}}
 {{< /section >}}
 
+{{< section title="What clients say" >}}
+{{< quotes >}}
+> "The best feature Bobsled ever built."
+>
+> Flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
+> designed, and shipped in a single sprint.
+
+> "Ornella taught me how to run actionable meetings."
+>
+> Elisée Ouédraogo, Engineering Lead, DoonyaLabs.
+{{< /quotes >}}
+{{< /section >}}
+
 {{< band title="Let's talk" >}}
 {{< prose >}}
 If you're not sure where to even start, that's the kind of problem I like best.
 {.lede}
 
-[Get in touch →](mailto:ornella@konate.tech)
+[ornella@konate.tech →](mailto:ornella@konate.tech)
 {{< /prose >}}
 {{< /band >}}
