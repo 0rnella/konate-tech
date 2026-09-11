@@ -1,1 +1,8 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{- $legalName := site.Params.legalName | default site.Params.brand }}
+<p>Copyright {{ now.Year }} {{ $legalName }} — all rights reserved.</p>
+<p class="footer-legal">
+  {{- $legalName }}
+  {{- with site.Params.city }} · {{ . }}{{ end }}
+  {{- with site.Params.kvk }} · KVK {{ . }}{{ end }}
+  {{- with site.Params.vat }} · VAT {{ . }}{{ end }}
+</p>
