@@ -81,8 +81,10 @@ hardest part is solved.
 {{< /section >}}
 
 {{< band title="Let's talk" >}}
+{{< prose >}}
 If you're not sure where to even start, that's the kind of problem I like best.
 {.lede}
 
 [Get in touch →](mailto:ornella@konate.tech)
+{{< /prose >}}
 {{< /band >}}

@@ -7,10 +7,14 @@ anonymous <section> — same convention as {{< band >}}. Usage:
 {{< section title="Track record" >}}
 {{< stats >}}
 {{< /section >}}
+
+Content that isn't already another shortcode's output — real markdown
+prose — needs a {{< prose >}} wrapper of its own inside here first;
+see that shortcode for why.
 */}}
 {{- $title := .Get "title" }}
 {{- $id := $title | anchorize }}
 <section{{ with $title }} aria-labelledby="{{ $id }}"{{ end }}>
   {{- with $title }}<h2 id="{{ $id }}">{{ . }}</h2>{{ end }}
-  {{- .Inner | $.Page.RenderString (dict "display" "block") }}
+  {{- .Inner | safeHTML }}
 </section>

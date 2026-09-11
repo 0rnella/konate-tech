@@ -7,12 +7,16 @@ a real landmark rather than an anonymous <section>. Usage:
 {{< band title="How I can help" >}}
 {{< services >}}
 {{< /band >}}
+
+Content that isn't already another shortcode's output — real markdown
+prose — needs a {{< prose >}} wrapper of its own inside here first;
+see that shortcode for why.
 */}}
 {{- $title := .Get "title" }}
 {{- $id := $title | anchorize }}
 <section class="band"{{ with $title }} aria-labelledby="{{ $id }}"{{ end }}>
   <div class="band-inner">
     {{- with $title }}<h2 id="{{ $id }}">{{ . }}</h2>{{ end }}
-    {{- .Inner | $.Page.RenderString (dict "display" "block") }}
+    {{- .Inner | safeHTML }}
   </div>
 </section>
