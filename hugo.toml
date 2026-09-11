@@ -25,3 +25,11 @@ title = 'Konaté Tech B.V.'
   [module.hugoVersion]
     extended = false
     min = '0.146.0'
+
+[markup]
+  # Needed so layout shortcodes like {{< band >}}/{{< quotes >}} can wrap
+  # markdown (which itself may call other shortcodes) and re-render it
+  # via .RenderString without Hugo stripping the resulting HTML. Content
+  # here is always our own — never third-party input.
+  [markup.goldmark.renderer]
+    unsafe = true

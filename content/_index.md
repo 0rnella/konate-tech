@@ -37,8 +37,36 @@ value = '2M+'
 label = 'users on a platform I shipped at Disney'
 +++
 
+{{< band >}}
+## How I can help
+
+{{< services >}}
+{{< /band >}}
+
+## Selected work
+
+{{< case-studies >}}
+
+## Track record
+
+{{< stats >}}
+
+## What clients say
+
+{{< quotes >}}
+> "The best feature Bobsled ever built."
+>
+> Flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
+> designed, and shipped in a single sprint.
+
+> "Ornella taught me how to run actionable meetings."
+>
+> Elisée Ouédraogo, Engineering Lead, DoonyaLabs.
+{{< /quotes >}}
+
 ## About
 
+{{< about-photo >}}
 Konaté Tech helps growing companies turn vague, hairy problems into architecture their team
 can build.
 
@@ -51,32 +79,12 @@ data infrastructure for growing teams.
 I work as a hands-on technical partner: identifying the root cause of a problem, designing the
 solution, writing and reviewing both architecture and code, and sitting with the team until the
 hardest part is solved.
+{{< /about-photo >}}
 
-## How I can help
-
-{{< services >}}
-
-## Selected work
-
-{{< case-studies >}}
-
-## Track record
-
-{{< stats >}}
-
-## What clients say
-
-> "The best feature Bobsled ever built."
->
-> Flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
-> designed, and shipped in a single sprint.
-
-> "Ornella taught me how to run actionable meetings."
->
-> Elisée Ouédraogo, Engineering Lead, DoonyaLabs.
-
+{{< band >}}
 ## Let's talk
 
 If you're not sure where to even start, that's the kind of problem I like best.
 
 [Get in touch →](mailto:ornella@konate.tech)
+{{< /band >}}

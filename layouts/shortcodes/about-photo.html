@@ -1,0 +1,29 @@
+{{- /*
+Renders the About section as a photo + bio split. Drop a `portrait.jpg`
+(or .png/.webp) next to content/_index.md and it's picked up
+automatically — until then the frame renders empty rather than broken.
+
+Usage:
+{{< about-photo >}}
+Bio paragraphs go here.
+{{< /about-photo >}}
+*/}}
+{{- $photo := $.Page.Resources.GetMatch "portrait.*" }}
+<div class="about">
+  <div class="about-photo">
+    {{- with $photo }}
+      {{- with .Resize "640x" }}
+        <img
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          alt="Ornella Friggit-Konaté"
+          loading="lazy"
+        >
+      {{- end }}
+    {{- end }}
+  </div>
+  <div class="about-text">
+    {{- .Inner | $.Page.RenderString (dict "display" "block") }}
+  </div>
+</div>

@@ -1,39 +1,23 @@
 @use "../tokens" as *;
 @use "../mixins" as *;
 
-// Continues the header's gradient into a full hero band. The header sits
-// on top of this (sticky), so together they read as one gradient surface.
-// At least 80% of the viewport tall, with the copy bottom-aligned.
-.hero {
-  min-height: 80vh;
-  display: flex;
-  align-items: flex-end;
-  background: var(--gradient-header);
-}
-
 .hero-inner {
-  // Same width/left edge as .content below, so the headline lines up with
-  // the body copy it leads into. Top padding is a floor clearing the
-  // fixed header above it (see _header.scss) — needed because the copy
-  // is bottom-aligned and can otherwise grow past the header on short
-  // viewports (e.g. mobile landscape, long wrapped headlines).
-  @include container($container-content);
-  padding-block: 5rem $space-4 * 3;
+  @include container($container-wide);
+  padding-block: $space-4 * 2 $space-4;
 }
 
 .hero h1 {
-  max-width: 40rem;
-  margin: 0 0 $space-2;
-  font-size: clamp(2rem, 1.5rem + 2.5vw, 3rem);
+  max-width: 20ch;
+  margin: 0 0 $space-3;
+  font-size: clamp(2.25rem, 1.6rem + 3vw, 4rem);
   font-weight: $font-weight-bold;
-  line-height: 1.15;
-  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 .hero-subtitle {
-  max-width: 34rem;
+  max-width: 38rem;
   margin: 0 0 $space-3;
-  font-size: 1.125rem;
-  color: var(--color-text);
-  opacity: 0.8;
+  font-size: 1.2rem;
+  color: var(--color-ink-soft);
 }

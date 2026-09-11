@@ -1,14 +1,5 @@
 {{- /*
-Renders a stat strip from the page's `stats` front matter
-(a list of {value, label}).
+Renders the "track record" stat grid from the page's `stats` front
+matter (a list of {value, label}).
 */}}
-{{- with .Page.Params.stats }}
-  <div class="stats-row">
-    {{- range . }}
-      <div class="stat">
-        <span class="stat-value">{{ .value }}</span>
-        <span class="stat-label">{{ .label }}</span>
-      </div>
-    {{- end }}
-  </div>
-{{- end }}
+{{- partial "stat-grid.html" (dict "stats" .Page.Params.stats) }}

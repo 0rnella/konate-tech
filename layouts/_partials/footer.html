@@ -1,8 +1,10 @@
 {{- $legalName := site.Params.legalName | default site.Params.brand }}
-<p>© {{ now.Year }} {{ $legalName }} · All rights reserved.</p>
-<p class="footer-legal">
-  {{- $legalName }}
-  {{- with site.Params.city }} · {{ . }}{{ end }}
-  {{- with site.Params.kvk }} · KVK {{ . }}{{ end }}
-  {{- with site.Params.vat }} · VAT {{ . }}{{ end }}
-</p>
+<div class="footer-inner">
+  <p>© {{ now.Year }} {{ $legalName }} · All rights reserved.</p>
+  <p>
+    {{- $legalName }}
+    {{- with site.Params.city }} · {{ . }}{{ end }}
+    {{- with site.Params.kvk }} · KVK {{ . }}{{ end }}
+    {{- with site.Params.vat }} · VAT {{ . }}{{ end }}
+  </p>
+</div>

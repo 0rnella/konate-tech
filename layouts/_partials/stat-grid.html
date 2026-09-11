@@ -1,0 +1,20 @@
+{{- /*
+Renders a bordered grid of big-number stats — shared by the homepage
+"Track record" section, a case study's metrics header, and a case
+study card's teaser metrics.
+
+@context {slice} .stats A list of {value, label}.
+@context {bool} compact Optional. Smaller type for the card teaser.
+*/}}
+{{- $stats := .stats }}
+{{- $compact := .compact }}
+{{- with $stats }}
+  <div class="stat-grid{{ if $compact }} stat-grid--compact{{ end }}">
+    {{- range . }}
+      <div class="stat-cell">
+        <span class="stat-value">{{ .value }}</span>
+        <span class="stat-label">{{ .label }}</span>
+      </div>
+    {{- end }}
+  </div>
+{{- end }}

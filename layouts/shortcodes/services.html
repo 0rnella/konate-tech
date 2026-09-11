@@ -1,11 +1,11 @@
 {{- /*
-Renders the "how I can help" grid from the page's `services` front matter
-(a list of {title, description}).
+Renders the "how I can help" list from the page's `services` front
+matter (a list of {title, description}) as a stack of hoverable rows.
 */}}
 {{- with .Page.Params.services }}
-  <div class="services-grid">
+  <div class="help-list">
     {{- range . }}
-      <div class="service-card">
+      <div class="help-row">
         <h3>{{ .title }}</h3>
         <p>{{ .description }}</p>
       </div>

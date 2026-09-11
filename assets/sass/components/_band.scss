@@ -1,0 +1,36 @@
+@use "../tokens" as *;
+@use "../mixins" as *;
+
+// A full-bleed section that inverts the palette — ink background, cream
+// text — used to break the page into a light/dark rhythm (see
+// {{< band >}} shortcode). Breaks out of its parent's max-width with the
+// standard negative-margin trick, then re-applies a contained width
+// inside for its own content.
+.band {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  background: var(--color-ink);
+  color: var(--color-bg);
+
+  // When a band is the page's last section (the closing "Let's talk"),
+  // cancel out .content's own bottom padding so it runs straight into
+  // the footer instead of leaving a sliver of the light background
+  // between two sections that are meant to read as one dark block.
+  &:last-child {
+    margin-bottom: -#{$space-4};
+  }
+
+  // Flips the tokens that components read for "current context" colors,
+  // so buttons, links, and rules inside a band invert automatically
+  // without every component needing a dark-mode variant of its own.
+  --color-ink-soft: var(--color-ink-soft-inverse);
+  --color-rule: var(--color-rule-inverse);
+  --color-link: var(--color-bg);
+  --btn-ink: var(--color-bg);
+  --btn-hover-text: var(--color-ink);
+}
+
+.band-inner {
+  @include container($container-wide);
+  padding-block: $space-4 * 2;
+}

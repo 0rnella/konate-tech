@@ -1,44 +1,25 @@
 @use "../tokens" as *;
 
-// Headings inside markdown-driven body copy (About, How I can help, Selected
-// work, etc.) — each `##` becomes a new section, so give them room to
-// breathe and a consistent rhythm down the page.
-.content {
-  h2 {
-    font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
-    font-weight: $font-weight-bold;
-    margin: $space-4 * 2 0 $space-3;
-    color: var(--color-text);
-
-    &:first-of-type {
-      margin-top: $space-4;
-    }
-  }
-
-  p {
-    max-width: $container-content;
-  }
+// Headings inside markdown-driven body copy (About, How I can help,
+// Selected work, etc.) — each `##` becomes a new section, so give them
+// room to breathe and a consistent rhythm down the page. Colors are
+// deliberately left to inherit from the surrounding context (`body`
+// normally, `.band` when a section is inverted) rather than hardcoded,
+// so the same heading works on either background.
+.content h2 {
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 $space-3;
 }
 
-// Testimonials, written as markdown blockquotes: the quote itself, then a
-// second paragraph for attribution.
-blockquote {
-  margin: $space-3 0;
-  padding: $space-3 $space-4;
-  border-left: 3px solid var(--color-accent);
-  background: var(--color-surface);
-  border-radius: 0 $radius-md $radius-md 0;
+// Vertical rhythm between top-level sections — each new section's
+// heading gets room from the one before it; a band gets its own via
+// .band-inner's padding instead.
+.content > h2 {
+  margin-top: $space-4 * 2;
+}
 
-  p {
-    margin: 0 0 $space-1;
-    font-size: 1.125rem;
-    font-style: italic;
-
-    &:last-child {
-      margin-bottom: 0;
-      font-size: 0.9rem;
-      font-style: normal;
-      opacity: 0.75;
-    }
-  }
+.content p {
+  max-width: $container-content;
 }
