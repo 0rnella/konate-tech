@@ -6,11 +6,11 @@ heroSubtitle = "Helping growing companies find root causes, design solutions, an
 
 [[services]]
 title = 'Fractional CTO'
-description = 'Architecture strategy, technical decision-making, and team upskilling — as an embedded partner to leadership, not an outside advisor.'
+description = 'Architecture strategy, technical decision-making, and team upskilling, as an embedded partner to your leadership team.'
 
 [[services]]
 title = 'Infrastructure & DevOps'
-description = 'Turning ad-hoc deployments into automated, standardized IaC and CI/CD — usually alongside a real reduction in cloud spend.'
+description = 'Turning ad-hoc deployments into automated, standardized IaC and CI/CD, reducing both engineering time and cloud spend.'
 
 [[services]]
 title = 'Data & analytics pipelines'
@@ -18,7 +18,7 @@ description = 'Getting raw, queryable data out of the tools that trap it, into a
 
 [[services]]
 title = 'Hands-on delivery'
-description = "I write and review the architecture and the code, and stay until the hardest part is solved — not just the slide deck."
+description = "I write and review the architecture and the code myself, and stay with the team until the hardest part is solved."
 
 [[stats]]
 value = '7'
