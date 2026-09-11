@@ -7,7 +7,7 @@
   align-items: start;
 
   @media (min-width: 700px) {
-    grid-template-columns: minmax(220px, 320px) 1fr;
+    grid-template-columns: minmax(160px, 220px) 1fr;
   }
 }
 
