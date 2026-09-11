@@ -13,8 +13,8 @@ title = 'Konaté Tech B.V.'
     weight = 10
 
   [[menus.main]]
-    name = 'Posts'
-    pageRef = '/posts'
+    name = 'Case Studies'
+    pageRef = '/case-studies'
     weight = 20
 
 [module]

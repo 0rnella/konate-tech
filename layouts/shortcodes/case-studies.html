@@ -1,0 +1,11 @@
+{{- /*
+Renders a card grid of all case studies. Used on the homepage teaser and
+could be reused anywhere a subset should be featured.
+*/}}
+{{- with site.GetPage "case-studies" }}
+  <div class="case-study-grid">
+    {{- range .Pages }}
+      {{- partial "case-study-card.html" . }}
+    {{- end }}
+  </div>
+{{- end }}

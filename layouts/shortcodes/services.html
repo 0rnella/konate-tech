@@ -1,0 +1,14 @@
+{{- /*
+Renders the "how I can help" grid from the page's `services` front matter
+(a list of {title, description}).
+*/}}
+{{- with .Page.Params.services }}
+  <div class="services-grid">
+    {{- range . }}
+      <div class="service-card">
+        <h3>{{ .title }}</h3>
+        <p>{{ .description }}</p>
+      </div>
+    {{- end }}
+  </div>
+{{- end }}

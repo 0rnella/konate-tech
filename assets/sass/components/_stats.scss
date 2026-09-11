@@ -1,0 +1,29 @@
+@use "../tokens" as *;
+
+// Shared by the homepage "track record" strip and each case study's metric
+// row — a big number over a short label.
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+  margin: $space-3 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  min-width: 7rem;
+}
+
+.stat-value {
+  font-size: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
+  font-weight: $font-weight-bold;
+  color: var(--color-accent-strong);
+  line-height: 1.1;
+}
+
+.stat-label {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}

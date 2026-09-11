@@ -10,7 +10,7 @@
   {{ if .IsHome }}
     {{ partial "hero.html" . }}
   {{ end }}
-  <main class="content">
+  <main class="content{{ if .IsHome }} content-wide{{ end }}">
     {{ block "main" . }}{{ end }}
   </main>
   <footer>

@@ -4,6 +4,10 @@
 @use "components/hero";
 @use "components/buttons";
 @use "components/footer";
+@use "components/sections";
+@use "components/services";
+@use "components/stats";
+@use "components/case-studies";
 
 // Expose brand tokens as CSS custom properties so any rule — including
 // future components and inline styles — can reuse them at runtime.
@@ -38,6 +42,13 @@ body {
 .content {
   @include container($container-content);
   padding-block: $space-3;
+}
+
+// The homepage packs in cards and grids that read better with more room
+// than a single column of prose; article/case-study pages keep the
+// narrower default set above.
+.content-wide {
+  max-width: $container-wide;
 }
 
 a {
