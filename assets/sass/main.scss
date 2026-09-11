@@ -3,26 +3,26 @@
 @use "components/header";
 @use "components/hero";
 @use "components/buttons";
+@use "components/band";
 @use "components/footer";
 @use "components/sections";
-@use "components/services";
-@use "components/stats";
+@use "components/help-list";
+@use "components/stat-grid";
+@use "components/quotes";
 @use "components/case-studies";
+@use "components/about";
 
 // Expose brand tokens as CSS custom properties so any rule — including
 // future components and inline styles — can reuse them at runtime.
 :root {
-  --color-page-bg: #{$color-page-bg};
-  --color-surface: #{$color-surface};
-  --color-accent: #{$color-accent};
-  --color-accent-strong: #{$color-accent-strong};
-  --color-accent-soft: #{$color-accent-soft};
-  --color-brass: #{$color-brass};
-  --color-text: #{$color-text};
-  --color-text-inverse: #{$color-text-inverse};
-  --color-link: #{$color-link};
-  --color-border: #{$color-border};
-  --gradient-header: #{$gradient-header};
+  --color-bg: #{$color-bg};
+  --color-bg-muted: #{$color-bg-muted};
+  --color-ink: #{$color-ink};
+  --color-ink-soft: #{$color-ink-soft};
+  --color-rule: #{$color-rule};
+  --color-rule-inverse: #{$color-rule-inverse};
+  --color-ink-soft-inverse: #{$color-ink-soft-inverse};
+  --color-link: var(--color-ink);
 }
 
 *,
@@ -31,22 +31,40 @@
   box-sizing: border-box;
 }
 
+// .band breaks out to 100vw for its full-bleed background (see
+// components/_band.scss); 100vw doesn't account for the scrollbar's own
+// width, which would otherwise cause a few pixels of horizontal overflow
+// on any page tall enough to scroll. Overflow is on the root (html/body)
+// rather than some inner wrapper, which is the one case where this
+// doesn't also break the header's `position: sticky`.
+html {
+  overflow-x: hidden;
+}
+
 body {
-  background: var(--color-page-bg);
-  color: var(--color-text);
-  font-family: $font-sans;
-  line-height: 1.5;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: $font-body;
+  line-height: 1.55;
   margin: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-display;
+  text-wrap: balance;
 }
 
 .content {
   @include container($container-content);
-  padding-block: $space-3;
+  padding-block: $space-4;
 }
 
-// The homepage packs in cards and grids that read better with more room
-// than a single column of prose; article/case-study pages keep the
-// narrower default set above.
+// The homepage packs in grids and full-bleed bands that read better with
+// more room than a single column of prose; article/case-study pages keep
+// the narrower default set above.
 .content-wide {
   max-width: $container-wide;
 }
@@ -54,4 +72,13 @@ body {
 a {
   color: var(--color-link);
   text-decoration: none;
+}
+
+// Inline links within running prose (an About paragraph, a case study's
+// closing CTA) still read as links; a whole-block link like a card or a
+// nav item never sits inside a bare `<p>`, so this doesn't reach those.
+p a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
 }

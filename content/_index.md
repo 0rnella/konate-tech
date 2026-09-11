@@ -37,11 +37,20 @@ value = '2M+'
 label = 'users on a platform I shipped at Disney'
 +++
 
-## About
+{{< section title="Track record" >}}
+{{< stats >}}
+{{< /section >}}
 
-Konaté Tech helps growing companies turn vague, hairy problems into architecture their team
-can build.
+{{< band title="How I can help" >}}
+{{< services >}}
+{{< /band >}}
 
+{{< section title="Selected work" >}}
+{{< case-studies >}}
+{{< /section >}}
+
+{{< section title="About" >}}
+{{< about-photo lede="Konaté Tech helps growing companies turn vague, hairy problems into architecture their team can build." >}}
 I'm Ornella Friggit-Konaté, a Staff Software Engineer with 7 years across big tech (Disney
 Streaming) and startups (Bobsled), now also working independently through Konaté Tech. I've
 spent my career turning ambiguous problems into solutions my clients can build on. That's
@@ -51,21 +60,11 @@ data infrastructure for growing teams.
 I work as a hands-on technical partner: identifying the root cause of a problem, designing the
 solution, writing and reviewing both architecture and code, and sitting with the team until the
 hardest part is solved.
+{{< /about-photo >}}
+{{< /section >}}
 
-## How I can help
-
-{{< services >}}
-
-## Selected work
-
-{{< case-studies >}}
-
-## Track record
-
-{{< stats >}}
-
-## What clients say
-
+{{< section title="What clients say" >}}
+{{< quotes >}}
 > "The best feature Bobsled ever built."
 >
 > Flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
@@ -74,9 +73,14 @@ hardest part is solved.
 > "Ornella taught me how to run actionable meetings."
 >
 > Elisée Ouédraogo, Engineering Lead, DoonyaLabs.
+{{< /quotes >}}
+{{< /section >}}
 
-## Let's talk
-
+{{< band title="Let's talk" >}}
+{{< prose >}}
 If you're not sure where to even start, that's the kind of problem I like best.
+{.lede}
 
-[Get in touch →](mailto:ornella@konate.tech)
+[ornella@konate.tech →](mailto:ornella@konate.tech)
+{{< /prose >}}
+{{< /band >}}

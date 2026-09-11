@@ -1,44 +1,38 @@
 @use "../tokens" as *;
 
-// Headings inside markdown-driven body copy (About, How I can help, Selected
-// work, etc.) — each `##` becomes a new section, so give them room to
-// breathe and a consistent rhythm down the page.
-.content {
-  h2 {
-    font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
-    font-weight: $font-weight-bold;
-    margin: $space-4 * 2 0 $space-3;
-    color: var(--color-text);
-
-    &:first-of-type {
-      margin-top: $space-4;
-    }
-  }
-
-  p {
-    max-width: $container-content;
-  }
+// Headings for each homepage <section> (About, How I can help, Selected
+// work, etc.), rendered by the {{< section >}}/{{< band >}} shortcodes.
+// Colors are deliberately left to inherit from the surrounding context
+// (`body` normally, `.band` when a section is inverted) rather than
+// hardcoded, so the same heading works on either background.
+.content h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 $space-3;
 }
 
-// Testimonials, written as markdown blockquotes: the quote itself, then a
-// second paragraph for attribution.
-blockquote {
-  margin: $space-3 0;
-  padding: $space-3 $space-4;
-  border-left: 3px solid var(--color-accent);
-  background: var(--color-surface);
-  border-radius: 0 $radius-md $radius-md 0;
+// Vertical rhythm between top-level sections (each is a real <section>,
+// from the {{< section >}}/{{< band >}} shortcodes) — gives each one
+// room from the one before it. The very first doesn't need it: .content
+// already has its own top padding.
+.content > section + section {
+  margin-top: $space-4 * 2;
+}
 
-  p {
-    margin: 0 0 $space-1;
-    font-size: 1.125rem;
-    font-style: italic;
+.content p {
+  max-width: $container-content;
+}
 
-    &:last-child {
-      margin-bottom: 0;
-      font-size: 0.9rem;
-      font-style: normal;
-      opacity: 0.75;
-    }
-  }
+// A pull-statement paragraph — the About section's opening line, the
+// closing "Let's talk" line — set apart from the surrounding body copy.
+// Mark a paragraph with it in markdown via a trailing `{.lede}`.
+.lede {
+  font-family: $font-display;
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  max-width: 32ch;
 }

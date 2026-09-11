@@ -8,19 +8,38 @@
   padding-inline: $space-2;
 }
 
-// Solid brand button (used by the header CTA, and reusable anywhere
-// else a primary call-to-action is needed).
-@mixin button-solid {
-  display: inline-block;
-  background: var(--color-accent);
-  color: var(--color-text-inverse);
-  font-weight: $font-weight-bold;
-  padding: 0.65rem 1.4rem;
-  border-radius: $radius-md;
+// Small tracked uppercase caption — eyebrows, stat labels, nav links.
+@mixin label {
+  font-family: $font-display;
+  font-size: 0.75rem;
+  font-weight: $font-weight-medium;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+// Outline button that inverts to a solid fill on hover. Used by the
+// header CTA, hero, and every "get in touch" link on the page. Reads
+// its colors from --btn-ink/--btn-hover-text so the same markup and
+// class also work inside a dark band, where those two are flipped
+// (see components/_band.scss).
+@mixin button-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  border: 1px solid var(--btn-ink, var(--color-ink));
+  color: var(--btn-ink, var(--color-ink));
+  padding: 0.85rem 1.5rem;
+  @include label;
   text-decoration: none;
   white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
   &:hover {
-    background: var(--color-accent-strong);
+    background: var(--btn-ink, var(--color-ink));
+    color: var(--btn-hover-text, var(--color-bg));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }

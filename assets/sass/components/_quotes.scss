@@ -1,0 +1,49 @@
+@use "../tokens" as *;
+
+// Testimonials, written as plain markdown blockquotes (quote, then an
+// attribution paragraph) and wrapped by the {{< quotes >}} shortcode
+// into a two-up grid divided by a hairline.
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--color-rule);
+
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.quote-grid blockquote {
+  margin: 0;
+  padding: $space-4 $space-3;
+  border-bottom: 1px solid var(--color-rule);
+  max-width: none;
+
+  @media (min-width: 700px) {
+    border-bottom: none;
+
+    &:not(:first-child) {
+      border-left: 1px solid var(--color-rule);
+    }
+  }
+
+  p:first-child {
+    margin: 0 0 $space-2;
+    max-width: 20ch;
+    font-family: $font-display;
+    font-size: clamp(1.3rem, 1.1rem + 1vw, 1.9rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  p:last-child {
+    margin: 0;
+    max-width: 40ch;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+  }
+}

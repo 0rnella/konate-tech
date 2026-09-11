@@ -1,31 +1,26 @@
 // Design tokens — the single source of truth for brand colors, spacing,
 // typography and other reusable values. Change a value here and it
 // propagates everywhere it's used.
-@use "sass:color";
 
-// --- Brand colors -----------------------------------------------------
-// Warm, editorial palette: cream walls, dusty terracotta marble, brass fixtures.
-$color-page-bg: #fdf8f1;
-$color-surface: #f7ece0;
-$color-accent-soft: #dba879;
-$color-accent: #b5654a;
-$color-accent-strong: color.adjust($color-accent, $lightness: -12%);
-$color-brass: #a9803f;
+// --- Brand colors -------------------------------------------------------
+// Monochrome editorial palette: warm cream ground, near-black ink, a
+// muted hairline for structure. No accent hue — contrast and typography
+// carry the page. "Inverse" tokens are the same pair flipped, used by
+// the full-bleed dark bands (see components/_band.scss).
+$color-bg: oklch(98.2% 0.004 95);
+$color-bg-muted: oklch(94% 0.005 95);
+$color-ink: oklch(16% 0 0);
+$color-ink-soft: oklch(52% 0 0);
+$color-rule: oklch(90.6% 0.007 95);
 
-$color-text: #33261c;
-$color-text-inverse: #fbf3ea;
-$color-link: $color-accent-strong;
-$color-border: #ddc7ac;
+$color-rule-inverse: oklch(100% 0 0 / 15%);
+$color-ink-soft-inverse: oklch(98.2% 0.004 95 / 60%);
 
-$gradient-header: linear-gradient(
-  115deg,
-  $color-surface 0%,
-  #ecd2b6 50%,
-  $color-accent-soft 100%
-);
-
-// --- Typography ---------------------------------------------------------
-$font-sans: sans-serif;
+// --- Typography -----------------------------------------------------------
+// Space Grotesk carries headings, big numbers, and tracked uppercase
+// labels/buttons; DM Sans carries running body copy.
+$font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+$font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 $font-weight-medium: 500;
 $font-weight-bold: 700;
 
@@ -37,8 +32,7 @@ $space-4: 2rem;
 
 // --- Layout ---------------------------------------------------------------
 $container-wide: 1200px;
-$container-content: 768px;
+$container-content: 720px;
 
 // --- Misc -------------------------------------------------------------
-$radius-md: 8px;
 $z-sticky: 50;

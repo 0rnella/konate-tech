@@ -1,6 +1,7 @@
 @use "../mixins" as *;
 
-// Shared primary call-to-action. Reused by the header nav and the hero.
+// Shared primary call-to-action. Reused by the header nav, the hero,
+// and every "get in touch" link on the page.
 .cta {
-  @include button-solid;
+  @include button-outline;
 }

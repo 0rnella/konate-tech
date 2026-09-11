@@ -1,0 +1,14 @@
+{{- /*
+Converts markdown to HTML. The innermost leaf for genuine markdown
+content nested inside {{< section >}}/{{< band >}} — those otherwise
+only ever receive content that's already a nested shortcode's fully-
+rendered HTML output, and skip a second, riskier pass through the
+markdown renderer (see git history for the bug that motivated this:
+a blank line inside such HTML, re-parsed as markdown, broke a card in
+two). Usage:
+
+{{< prose >}}
+Plain markdown paragraphs, links, whatever.
+{{< /prose >}}
+*/}}
+{{- .Inner | $.Page.RenderString (dict "display" "block") }}

@@ -1,0 +1,17 @@
+{{- /*
+Wraps a run of markdown blockquotes in a two-up grid divided by a
+hairline. Usage:
+
+{{< quotes >}}
+> "Quote one."
+>
+> Attribution one.
+
+> "Quote two."
+>
+> Attribution two.
+{{< /quotes >}}
+*/}}
+<div class="quote-grid">
+  {{- .Inner | $.Page.RenderString (dict "display" "block") }}
+</div>

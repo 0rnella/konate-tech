@@ -3,15 +3,17 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body{{ if .IsHome }} class="has-hero"{{ end }}>
+<body>
   <header>
     {{ partial "header.html" . }}
   </header>
-  {{ if .IsHome }}
-    {{ partial "hero.html" . }}
-  {{ end }}
-  <main class="content{{ if .IsHome }} content-wide{{ end }}">
-    {{ block "main" . }}{{ end }}
+  <main>
+    {{ if .IsHome }}
+      {{ partial "hero.html" . }}
+    {{ end }}
+    <div class="content{{ if .IsHome }} content-wide{{ end }}">
+      {{ block "main" . }}{{ end }}
+    </div>
   </main>
   <footer>
     {{ partial "footer.html" . }}

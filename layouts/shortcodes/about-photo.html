@@ -1,0 +1,31 @@
+{{- /*
+Renders the About section: an optional lede statement full-width up
+top, then a photo + bio split below it. Drop a `portrait.jpg` (or
+.png/.webp) next to content/_index.md and it's picked up automatically
+— until then the frame renders empty rather than broken.
+
+Usage:
+{{< about-photo lede="A pull-statement, full-width, above the rest." >}}
+Bio paragraphs go here.
+{{< /about-photo >}}
+*/}}
+{{- $photo := $.Page.Resources.GetMatch "portrait.*" }}
+{{- with .Get "lede" }}<p class="lede">{{ . }}</p>{{ end }}
+<div class="about">
+  <div class="about-text">
+    {{- .Inner | $.Page.RenderString (dict "display" "block") }}
+  </div>
+  <div class="about-photo">
+    {{- with $photo }}
+      {{- with .Fill "640x800 smart" }}
+        <img
+          src="{{ .RelPermalink }}"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          alt="Ornella Friggit-Konaté"
+          loading="lazy"
+        >
+      {{- end }}
+    {{- end }}
+  </div>
+</div>

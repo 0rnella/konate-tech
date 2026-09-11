@@ -1,63 +1,61 @@
 @use "../tokens" as *;
+@use "../mixins" as *;
 
-// --- Card grid (homepage teaser + case-studies index) --------------------
+// --- Card grid (homepage teaser) ------------------------------------------
 .case-study-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: $space-3;
-  margin: $space-3 0;
+}
+
+// --- Card stack (the /case-studies index — full-width, one under another) -
+.case-study-list {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
 }
 
 .case-study-card {
   display: block;
   padding: $space-3;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: $radius-md;
-  color: var(--color-text);
+  border: 1px solid var(--color-rule);
+  color: var(--color-ink);
+  transition: border-color 0.2s ease;
 
   &:hover {
-    border-color: var(--color-accent);
+    border-color: var(--color-ink);
   }
 
   h3 {
     margin: $space-1 0;
-    font-size: 1.25rem;
-    color: var(--color-text);
+    font-size: 1.3rem;
+    font-weight: 500;
   }
 
   p {
     margin: 0 0 $space-2;
-    opacity: 0.85;
+    color: var(--color-ink-soft);
+  }
+
+  .stat-grid {
+    border-top: 1px solid var(--color-rule);
+    background: none;
+    margin-top: $space-2;
+  }
+
+  .stat-cell {
+    background: none;
+    padding: $space-2 0 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
 }
 
 .case-study-card-client {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-accent-strong);
-}
-
-.case-study-card-metrics {
-  display: flex;
-  gap: $space-3;
-  padding-top: $space-2;
-  border-top: 1px solid var(--color-border);
-
-  .metric-value {
-    display: block;
-    font-weight: $font-weight-bold;
-    color: var(--color-accent-strong);
-  }
-
-  .metric-label {
-    display: block;
-    font-size: 0.8rem;
-    opacity: 0.75;
-  }
+  @include label;
+  color: var(--color-ink-soft);
 }
 
 // --- Single case study page ------------------------------------------------
@@ -66,33 +64,29 @@
 }
 
 .case-study-client {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-accent-strong);
+  @include label;
+  color: var(--color-ink-soft);
 }
 
 .case-study-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: $space-1 $space-4;
-  margin: $space-2 0;
+  gap: $space-2 $space-4;
+  margin: $space-3 0;
 
   div {
     display: flex;
     flex-direction: column;
+    gap: 0.2rem;
   }
 
   dt {
-    font-size: 0.8rem;
-    opacity: 0.65;
+    @include label;
+    color: var(--color-ink-soft);
   }
 
   dd {
     margin: 0;
-    font-weight: $font-weight-medium;
   }
 }
 
@@ -104,6 +98,6 @@
   h3 {
     margin: $space-3 0 $space-1;
     font-size: 1.1rem;
-    color: var(--color-accent-strong);
+    font-weight: 500;
   }
 }

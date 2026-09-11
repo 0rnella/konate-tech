@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <div class="case-study-grid">
+  <div class="case-study-list">
     {{- range .Pages }}
       {{- partial "case-study-card.html" . }}
     {{- end }}
