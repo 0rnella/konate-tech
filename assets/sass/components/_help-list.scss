@@ -15,19 +15,10 @@
   gap: $space-2 $space-4;
   padding-block: $space-3;
   border-bottom: 1px solid var(--color-rule);
-  transition: padding-left 0.25s ease;
-
-  &:hover {
-    padding-left: $space-3;
-  }
 
   @media (min-width: 900px) {
     grid-template-columns: 1fr 1fr;
     align-items: baseline;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
   }
 }
 
@@ -36,6 +27,15 @@
   font-size: clamp(1.5rem, 1.2rem + 1.6vw, 2.4rem);
   font-weight: 500;
   letter-spacing: -0.01em;
+  transition: transform 0.25s ease;
+
+  .help-row:hover & {
+    transform: translateX(#{$space-3});
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 }
 
 .help-row p {

@@ -37,6 +37,10 @@ value = '2M+'
 label = 'users on a platform I shipped at Disney'
 +++
 
+## Track record
+
+{{< stats >}}
+
 {{< band >}}
 ## How I can help
 
@@ -46,10 +50,6 @@ label = 'users on a platform I shipped at Disney'
 ## Selected work
 
 {{< case-studies >}}
-
-## Track record
-
-{{< stats >}}
 
 ## What clients say
 
@@ -69,6 +69,7 @@ label = 'users on a platform I shipped at Disney'
 {{< about-photo >}}
 Konaté Tech helps growing companies turn vague, hairy problems into architecture their team
 can build.
+{.lede}
 
 I'm Ornella Friggit-Konaté, a Staff Software Engineer with 7 years across big tech (Disney
 Streaming) and startups (Bobsled), now also working independently through Konaté Tech. I've
@@ -85,6 +86,7 @@ hardest part is solved.
 ## Let's talk
 
 If you're not sure where to even start, that's the kind of problem I like best.
+{.lede}
 
 [Get in touch →](mailto:ornella@konate.tech)
 {{< /band >}}

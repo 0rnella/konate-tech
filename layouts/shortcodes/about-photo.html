@@ -12,7 +12,7 @@ Bio paragraphs go here.
 <div class="about">
   <div class="about-photo">
     {{- with $photo }}
-      {{- with .Resize "640x" }}
+      {{- with .Fill "640x800 smart" }}
         <img
           src="{{ .RelPermalink }}"
           width="{{ .Width }}"

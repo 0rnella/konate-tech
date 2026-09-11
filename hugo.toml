@@ -33,3 +33,7 @@ title = 'Konaté Tech B.V.'
   # here is always our own — never third-party input.
   [markup.goldmark.renderer]
     unsafe = true
+  # Lets a paragraph opt into the `.lede` pull-statement style with a
+  # trailing `{.lede}` in the markdown, instead of a one-off shortcode.
+  [markup.goldmark.parser.attribute]
+    block = true

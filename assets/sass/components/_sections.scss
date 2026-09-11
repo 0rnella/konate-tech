@@ -7,9 +7,10 @@
 // normally, `.band` when a section is inverted) rather than hardcoded,
 // so the same heading works on either background.
 .content h2 {
-  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   margin: 0 0 $space-3;
 }
 
@@ -22,4 +23,16 @@
 
 .content p {
   max-width: $container-content;
+}
+
+// A pull-statement paragraph — the About section's opening line, the
+// closing "Let's talk" line — set apart from the surrounding body copy.
+// Mark a paragraph with it in markdown via a trailing `{.lede}`.
+.lede {
+  font-family: $font-display;
+  font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  max-width: 32ch;
 }
