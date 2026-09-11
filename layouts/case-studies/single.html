@@ -1,0 +1,33 @@
+{{ define "main" }}
+  <article class="case-study">
+    <div class="case-study-header">
+      {{- with .Params.client }}<span class="case-study-client">{{ . }}</span>{{ end }}
+      <h1>{{ .Title }}</h1>
+      <dl class="case-study-meta">
+        {{- with .Params.role }}
+          <div><dt>Role</dt><dd>{{ . }}</dd></div>
+        {{- end }}
+        {{- with .Params.duration }}
+          <div><dt>Duration</dt><dd>{{ . }}</dd></div>
+        {{- end }}
+        {{- with .Params.stack }}
+          <div><dt>Stack</dt><dd>{{ delimit . ", " }}</dd></div>
+        {{- end }}
+      </dl>
+      {{- with .Params.metrics }}
+        <div class="stats-row">
+          {{- range . }}
+            <div class="stat">
+              <span class="stat-value">{{ .value }}</span>
+              <span class="stat-label">{{ .label }}</span>
+            </div>
+          {{- end }}
+        </div>
+      {{- end }}
+    </div>
+
+    <div class="case-study-body">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

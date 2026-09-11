@@ -1,0 +1,26 @@
+@use "../tokens" as *;
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: $space-3;
+  margin: $space-3 0;
+}
+
+.service-card {
+  padding: $space-3;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-md;
+
+  h3 {
+    margin: 0 0 $space-1;
+    font-size: 1.1rem;
+    color: var(--color-accent-strong);
+  }
+
+  p {
+    margin: 0;
+    opacity: 0.85;
+  }
+}

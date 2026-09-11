@@ -3,4 +3,13 @@
 footer {
   border-top: 1px solid var(--color-border);
   padding: $space-2;
+
+  p {
+    margin: 0.25rem 0;
+  }
+}
+
+.footer-legal {
+  font-size: 0.8rem;
+  opacity: 0.7;
 }
