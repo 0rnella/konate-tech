@@ -71,9 +71,9 @@ hardest part is solved.
 > — flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
 > designed, and shipped in a single sprint
 
-> "Hours, if not days, per week."
+> "Ornella taught me how to run actionable meetings."
 >
-> — Bobsled sales team, on the time that same dashboard saved them
+> — Elisée Ouédraogo, Engineering Lead, DoonyaLabs
 
 ## Let's talk
 
