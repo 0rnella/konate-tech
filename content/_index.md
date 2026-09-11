@@ -50,11 +50,7 @@ label = 'users on a platform I shipped at Disney'
 {{< /section >}}
 
 {{< section title="About" >}}
-{{< about-photo >}}
-Konaté Tech helps growing companies turn vague, hairy problems into architecture their team
-can build.
-{.lede}
-
+{{< about-photo lede="Konaté Tech helps growing companies turn vague, hairy problems into architecture their team can build." >}}
 I'm Ornella Friggit-Konaté, a Staff Software Engineer with 7 years across big tech (Disney
 Streaming) and startups (Bobsled), now also working independently through Konaté Tech. I've
 spent my career turning ambiguous problems into solutions my clients can build on. That's
