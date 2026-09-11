@@ -29,8 +29,8 @@ value = '40%'
 label = 'cloud cost cut for Doonya Labs'
 
 [[stats]]
-value = '30+'
-label = 'sites unified into one pipeline for Galery'
+value = '5+'
+label = 'data sources unified by one abstraction layer I built at Bobsled'
 
 [[stats]]
 value = '2M+'

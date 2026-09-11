@@ -98,4 +98,12 @@
 
 .case-study-body {
   max-width: $container-content;
+
+  // "### Process" / "### Outcomes & artifacts" subheadings within a
+  // case study's "What I did" section.
+  h3 {
+    margin: $space-3 0 $space-1;
+    font-size: 1.1rem;
+    color: var(--color-accent-strong);
+  }
 }
