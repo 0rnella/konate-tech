@@ -1,5 +1,5 @@
 {{- $legalName := site.Params.legalName | default site.Params.brand }}
-<p>Copyright {{ now.Year }} {{ $legalName }} — all rights reserved.</p>
+<p>© {{ now.Year }} {{ $legalName }} · All rights reserved.</p>
 <p class="footer-legal">
   {{- $legalName }}
   {{- with site.Params.city }} · {{ . }}{{ end }}

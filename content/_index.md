@@ -2,7 +2,7 @@
 date = '2026-08-25T16:05:54+02:00'
 title = 'Home'
 heroTitle = 'From vague problem to completed project.'
-heroSubtitle = "Helping growing companies find root causes, design solutions, and staying with your team until the hardest part is solved."
+heroSubtitle = "I find the root cause and design the solution. Then I stay with your team until it ships."
 
 [[services]]
 title = 'Fractional CTO'
@@ -44,9 +44,9 @@ can build.
 
 I'm Ornella Friggit-Konaté, a Staff Software Engineer with 7 years across big tech (Disney
 Streaming) and startups (Bobsled), now also working independently through Konaté Tech. I've
-spent my career taking ambiguous problems, getting to their essence, and solving them — from
-web experimentation platforms serving millions of users, to cloud architecture and data
-infrastructure for growing teams.
+spent my career turning ambiguous problems into solutions my clients can build on. That's
+ranged from web experimentation platforms serving millions of users to cloud architecture and
+data infrastructure for growing teams.
 
 I work as a hands-on technical partner: identifying the root cause of a problem, designing the
 solution, writing and reviewing both architecture and code, and sitting with the team until the
@@ -68,16 +68,15 @@ hardest part is solved.
 
 > "The best feature Bobsled ever built."
 >
-> — flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
-> designed, and shipped in a single sprint
+> Flagship enterprise customer, on a Transfer Status dashboard I identified the need for,
+> designed, and shipped in a single sprint.
 
 > "Ornella taught me how to run actionable meetings."
 >
-> — Elisée Ouédraogo, Engineering Lead, DoonyaLabs
+> Elisée Ouédraogo, Engineering Lead, DoonyaLabs.
 
 ## Let's talk
 
-If you're facing a problem that's more "we're not sure where to even start" than "we need a
-ticket closed," that's the kind of work I like best.
+If you're not sure where to even start, that's the kind of problem I like best.
 
 [Get in touch →](mailto:ornella@konate.tech)
