@@ -12,6 +12,9 @@ Bio paragraphs go here.
 {{- $photo := $.Page.Resources.GetMatch "portrait.*" }}
 {{- with .Get "lede" }}<p class="lede">{{ . }}</p>{{ end }}
 <div class="about">
+  <div class="about-text">
+    {{- .Inner | $.Page.RenderString (dict "display" "block") }}
+  </div>
   <div class="about-photo">
     {{- with $photo }}
       {{- with .Fill "640x800 smart" }}
@@ -24,8 +27,5 @@ Bio paragraphs go here.
         >
       {{- end }}
     {{- end }}
-  </div>
-  <div class="about-text">
-    {{- .Inner | $.Page.RenderString (dict "display" "block") }}
   </div>
 </div>
